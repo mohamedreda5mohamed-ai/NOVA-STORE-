@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NOVA Store - متجر إلكتروني">
+  <title>NOVA Store | متجر إلكتروني</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="#home" class="logo">
+      NOVA<span>.</span>
+    </a>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#about">عن المتجر</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+      🛒 السلة
+      <span id="cartCount">0</span>
+    </button>
+
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="container hero-content">
+
+    <div class="hero-text-content">
+
+      <p class="small-title">
+        أهلاً بك في NOVA Store
+      </p>
+
+      <h1>
+        كل اللي محتاجه
+        <br>
+        <span>في مكان واحد</span>
+      </h1>
+
+      <p class="hero-text">
+        اكتشف منتجاتنا المختارة بعناية، اطلب بسهولة،
+        وتواصل معنا مباشرة عبر واتساب.
+      </p>
+
+      <a href="#products" class="main-btn">
+        تصفح المنتجات
+      </a>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="hero-icon">
+        🛍️
+      </div>
+
+      <h3>
+        تسوق بسهولة
+      </h3>
+
+      <p>
+        اختار منتجاتك وأرسل طلبك في دقائق.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="features">
+
+  <div class="container features-grid">
+
+    <div class="feature">
+      <div>🚚</div>
+      <h3>توصيل سريع</h3>
+      <p>
+        نوصل طلبك في أسرع وقت ممكن.
+      </p>
+    </div>
+
+
+    <div class="feature">
+      <div>🔒</div>
+      <h3>طلب آمن</h3>
+      <p>
+        بيانات طلبك محفوظة أثناء التواصل.
+      </p>
+    </div>
+
+
+    <div class="feature">
+      <div>💬</div>
+      <h3>دعم العملاء</h3>
+      <p>
+        تواصل معنا بسهولة على واتساب.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="products-section" id="products">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <p>منتجاتنا</p>
+
+      <h2>
+        اختار منتجك
+      </h2>
+
+    </div>
+
+
+    <div class="categories">
+
+      <button
+        class="category active"
+        onclick="filterProducts('all', this)"
+      >
+        الكل
+      </button>
+
+      <button
+        class="category"
+        onclick="filterProducts('electronics', this)"
+      >
+        إلكترونيات
+      </button>
+
+      <button
+        class="category"
+        onclick="filterProducts('clothes', this)"
+      >
+        ملابس
+      </button>
+
+      <button
+        class="category"
+        onclick="filterProducts('other', this)"
+      >
+        أخرى
+      </button>
+
+    </div>
+
+
+    <div
+      class="products-grid"
+      id="productsGrid"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+  <div class="container about-box">
+
+    <div>
+
+      <p class="small-title">
+        عن NOVA
+      </p>
+
+      <h2>
+        التسوق أسهل معانا
+      </h2>
+
+    </div>
+
+    <p>
+      NOVA Store هو نموذج متجر إلكتروني حديث
+      يساعد أصحاب المشاريع على عرض منتجاتهم
+      واستقبال الطلبات بسهولة والتواصل المباشر
+      مع العملاء.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="container contact-box">
+
+    <div>
+
+      <p class="small-title">
+        تواصل معنا
+      </p>
+
+      <h2>
+        عندك سؤال؟
+      </h2>
+
+      <p>
+        تواصل معنا مباشرة وسنرد عليك.
+      </p>
+
+    </div>
+
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/201000000000"
+      target="_blank"
+    >
+      💬 تواصل عبر واتساب
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-content">
+
+    <p>
+      © 2026 NOVA Store
+    </p>
+
+    <p>
+      صُنع بـ ❤️
+    </p>
+
+  </div>
+
+</footer>
+
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart(event)"
+>
+
+  <div
+    class="cart"
+    onclick="event.stopPropagation()"
+  >
+
+    <div class="cart-header">
+
+      <h2>
+        🛒 سلة المشتريات
+      </h2>
+
+      <button onclick="closeCart()">
+        ✕
+      </button>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-total">
+
+      <span>
+        الإجمالي:
+      </span>
+
+      <strong id="cartTotal">
+        0 ج.م
+      </strong>
+
+    </div>
+
+
+    <button
+      class="order-btn"
+      onclick="orderWhatsApp()"
+    >
+      إتمام الطلب عبر واتساب
+    </button>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
